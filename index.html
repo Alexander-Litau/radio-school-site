@@ -272,6 +272,7 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
     section { padding:60px 0; }
+    .site-header { background:#fff; }
     .nav-links, .nav-phone { display:none; }
     .burger { display:flex; }
     .mentors-grid { grid-template-columns:repeat(2,1fr); }
@@ -282,6 +283,8 @@
     .nav-cta-btn { display:none; }
     .hero-grid, .course-grid, .summer-grid, .contacts-grid { grid-template-columns:1fr; }
     .hero .wrap.hero-grid { margin-top:48px; margin-bottom:48px; }
+    .course-photo { order:2; aspect-ratio:4/4; }
+    .course-photo img { object-position:center 20%; }
     .adv-grid, .sched-grid, .price-grid, .mentors-grid { grid-template-columns:1fr 1fr; }
     .hero h1 { font-size:38px; }
     h2.section-title { font-size:30px; }
