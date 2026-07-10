@@ -295,6 +295,10 @@
   @media (max-width: 600px) {
     .adv-grid, .sched-grid, .price-grid, .mentors-grid { grid-template-columns:1fr; }
     .wrap { padding:0 20px; }
+    .adv-card.in-view, .price-card.in-view { transform:translateY(-6px); box-shadow:0 18px 40px rgba(238,28,37,.14); border-color:var(--red); }
+    .module-card.in-view { transform:translateY(-5px); box-shadow:0 16px 36px rgba(238,28,37,.12); border-color:var(--red); }
+    .mentor-card.in-view { transform:translateY(-6px); }
+    .mentor-card.in-view .mentor-photo { box-shadow:0 16px 34px rgba(238,28,37,.18); }
   }
 
   /* ---------- MOBILE MENU ---------- */
@@ -831,6 +835,24 @@
   if (location.hash === '#edit') {
     document.querySelectorAll('.mentor-photo img, .hero .photo-box img').forEach(makeEditable);
   }
+
+  // ---- Мобильный «поп» карточек при скролле (замена hover) ----
+  (function(){
+    if (!('IntersectionObserver' in window)) return;
+    var cards = document.querySelectorAll('.module-card, .adv-card, .price-card, .mentor-card');
+    if (!cards.length) return;
+    var mq = window.matchMedia('(max-width:600px)');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) e.target.classList.add('in-view');
+        else e.target.classList.remove('in-view');
+      });
+    }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+    function enable(){ cards.forEach(function(c){ observer.observe(c); }); }
+    function disable(){ observer.disconnect(); cards.forEach(function(c){ c.classList.remove('in-view'); }); }
+    if (mq.matches) enable();
+    if (mq.addEventListener) mq.addEventListener('change', function(e){ e.matches ? enable() : disable(); });
+  })();
 
   // ---- Карусель «Как проходят занятия» ----
   (function(){
