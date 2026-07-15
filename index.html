@@ -594,11 +594,11 @@
       <button class="lessons-btn prev" id="lessonsPrev" aria-label="Назад">‹</button>
       <div class="lessons-viewport">
         <div class="lessons-track" id="lessonsTrack">
-          <div class="lesson-card"><video src="video/lesson-1.mp4" poster="video/lesson-1.jpg" controls preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
-          <div class="lesson-card"><video src="video/lesson-2.mp4" poster="video/lesson-2.jpg" controls preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
-          <div class="lesson-card"><video src="video/lesson-3.mp4" poster="video/lesson-3.jpg" controls preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
-          <div class="lesson-card"><video src="video/lesson-4.mp4" poster="video/lesson-4.jpg" controls preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
-          <div class="lesson-card"><video src="video/lesson-5.mp4" poster="video/lesson-5.jpg" controls preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="lesson-card"><video src="video/lesson-1.mp4" poster="video/lesson-1.jpg" preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="lesson-card"><video src="video/lesson-2.mp4" poster="video/lesson-2.jpg" preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="lesson-card"><video src="video/lesson-3.mp4" poster="video/lesson-3.jpg" preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="lesson-card"><video src="video/lesson-4.mp4" poster="video/lesson-4.jpg" preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          <div class="lesson-card"><video src="video/lesson-5.mp4" poster="video/lesson-5.jpg" preload="none" playsinline></video><button class="lesson-play" aria-label="Смотреть видео"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
         </div>
       </div>
       <button class="lessons-btn next" id="lessonsNext" aria-label="Вперёд">›</button>
@@ -908,10 +908,11 @@
       if (playBtn) playBtn.addEventListener('click', function(){ if (v.paused) v.play(); else v.pause(); });
       v.addEventListener('play', function(){
         card.classList.add('is-playing');
-        cards.forEach(function(o){ if (o !== card) o.querySelector('video').pause(); });
+        v.controls = true;
+        cards.forEach(function(o){ if (o !== card) { var ov=o.querySelector('video'); ov.pause(); } });
       });
       v.addEventListener('pause', function(){ card.classList.remove('is-playing'); });
-      v.addEventListener('ended', function(){ card.classList.remove('is-playing'); });
+      v.addEventListener('ended', function(){ card.classList.remove('is-playing'); v.controls = false; });
     });
   })();
 
