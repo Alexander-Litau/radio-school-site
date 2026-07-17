@@ -56,7 +56,7 @@
 
   /* ---------- HERO ---------- */
   .hero { padding:0; min-height:calc(100vh - var(--header-h, 111px)); display:flex; flex-direction:column; justify-content:flex-start; box-sizing:border-box; position:relative; }
-  .hero-marquee { overflow:hidden; border-top:1px solid rgba(238,28,37,.16); border-bottom:1px solid rgba(238,28,37,.16); padding:20px 0; position:relative; z-index:1; background:var(--bg); }
+  .hero-marquee { overflow:hidden; padding:20px 0; position:relative; z-index:1; background:var(--red); }
   .hero-blobs { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
   .blob { position:absolute; border-radius:50%; pointer-events:none; will-change:transform; animation:blobPulse 7s ease-in-out infinite; }
   .blob-1 { width:400px; height:400px; background:#FFB7AD; opacity:.55; top:-120px; left:-90px; animation-duration:8s; }
@@ -65,8 +65,8 @@
   @keyframes blobPulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.18); } }
   @media (prefers-reduced-motion: reduce) { .blob { animation:none; } }
   .marquee-track { display:flex; align-items:center; gap:32px; width:max-content; white-space:nowrap; will-change:transform; }
-  .marquee-track span { font-family:'Baloo 2'; font-weight:700; font-size:22px; color:var(--red); }
-  .marquee-track span.dot { color:var(--muted-2); font-size:9px; }
+  .marquee-track span { font-family:'Baloo 2'; font-weight:700; font-size:22px; color:#fff; }
+  .marquee-track span.dot { color:rgba(255,255,255,.6); font-size:9px; }
   .marquee-track .m-ic { width:24px; height:24px; object-fit:contain; flex-shrink:0; }
   .hero .wrap.hero-grid { width:100%; margin-top:auto; margin-bottom:auto; }
   .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:stretch; }
@@ -386,8 +386,8 @@
   </div>
   <div class="hero-marquee">
     <div class="marquee-track" id="marqueeTrack">
-      <span>Радио</span><img class="m-ic" src="icons/ic4.png" alt=""><span>Журналистика</span><img class="m-ic" src="icons/ic5.png" alt=""><span>Актёрское мастерство</span><img class="m-ic" src="icons/ic3.png" alt=""><span>Интервью</span><img class="m-ic" src="icons/ic1.png" alt=""><span>Свой блог</span><img class="m-ic" src="icons/ic6.png" alt=""><span>Эфир</span><img class="m-ic" src="icons/ic9.png" alt="">
-      <span>Радио</span><img class="m-ic" src="icons/ic4.png" alt=""><span>Журналистика</span><img class="m-ic" src="icons/ic5.png" alt=""><span>Актёрское мастерство</span><img class="m-ic" src="icons/ic3.png" alt=""><span>Интервью</span><img class="m-ic" src="icons/ic1.png" alt=""><span>Свой блог</span><img class="m-ic" src="icons/ic6.png" alt=""><span>Эфир</span><img class="m-ic" src="icons/ic9.png" alt="">
+      <span>Радио</span><img class="m-ic" src="icons/ic4-white.png" alt=""><span>Журналистика</span><img class="m-ic" src="icons/ic5-white.png" alt=""><span>Актёрское мастерство</span><img class="m-ic" src="icons/ic3-white.png" alt=""><span>Интервью</span><img class="m-ic" src="icons/ic1-white.png" alt=""><span>Свой блог</span><img class="m-ic" src="icons/ic6-white.png" alt=""><span>Эфир</span><img class="m-ic" src="icons/ic9-white.png" alt="">
+      <span>Радио</span><img class="m-ic" src="icons/ic4-white.png" alt=""><span>Журналистика</span><img class="m-ic" src="icons/ic5-white.png" alt=""><span>Актёрское мастерство</span><img class="m-ic" src="icons/ic3-white.png" alt=""><span>Интервью</span><img class="m-ic" src="icons/ic1-white.png" alt=""><span>Свой блог</span><img class="m-ic" src="icons/ic6-white.png" alt=""><span>Эфир</span><img class="m-ic" src="icons/ic9-white.png" alt="">
     </div>
   </div>
 </section>
