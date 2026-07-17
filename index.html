@@ -69,8 +69,8 @@
   .marquee-track span.dot { color:var(--muted-2); font-size:9px; }
   .marquee-track .m-ic { width:24px; height:24px; object-fit:contain; flex-shrink:0; }
   .hero .wrap.hero-grid { width:100%; margin-top:auto; margin-bottom:auto; }
-  .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:center; }
-  .onair-row { display:flex; align-items:center; gap:14px; margin-bottom:36px; }
+  .hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:48px; align-items:stretch; }
+  .onair-row { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
   .onair-sign { display:inline-flex; align-items:center; gap:9px; background:#fff; border:1.5px solid var(--red); color:var(--red); font-weight:800; font-size:13px; letter-spacing:.1em; padding:7px 16px; border-radius:8px; box-shadow:0 6px 16px rgba(238,28,37,.16); }
   .onair-sign .dot { width:7px; height:7px; border-radius:50%; background:var(--red); box-shadow:0 0 8px rgba(238,28,37,.7); animation:qpulse 1.3s infinite; }
   .signal { display:flex; align-items:flex-end; gap:3px; height:16px; }
@@ -87,7 +87,9 @@
   .hero p.sub { font-size:20px; line-height:1.65; color:var(--muted); max-width:460px; margin-bottom:44px; }
   .hero-photo-wrap { position:relative; }
   .photo-box { border-radius:var(--radius-lg); aspect-ratio:4/3.3; display:flex; align-items:center; justify-content:center; position:relative; background:var(--red-light); border:1px solid rgba(238,28,37,.2); box-shadow:0 20px 45px rgba(238,28,37,.12); z-index:1; overflow:hidden; }
-  .hero .photo-box { aspect-ratio:4/4.4; }
+  .hero .hero-photo-wrap { display:flex; }
+  .hero .photo-box { aspect-ratio:auto; width:100%; }
+  .hero .photo-box img { position:absolute; inset:0; }
   .photo-note { font-size:13px; color:var(--muted-2); font-weight:600; text-align:center; padding:0 20px; }
   .rec-tag { position:absolute; top:14px; right:14px; z-index:2; display:flex; align-items:center; gap:6px; background:#fff; border:1px solid rgba(238,28,37,.4); color:var(--red); font-weight:800; font-size:11px; letter-spacing:.08em; padding:5px 10px; border-radius:999px; box-shadow:0 4px 10px rgba(238,28,37,.15); }
   .photo-caption { position:absolute; left:0; right:0; bottom:0; z-index:2; padding:60px 28px 26px; background:linear-gradient(to top, rgba(15,10,10,.72), rgba(15,10,10,0)); color:#fff; }
@@ -303,6 +305,8 @@
     .nav-cta-btn { display:none; }
     .hero-grid, .course-grid, .summer-grid, .contacts-grid { grid-template-columns:1fr; }
     .hero .wrap.hero-grid { margin-top:48px; margin-bottom:48px; }
+    .hero .hero-photo-wrap { display:block; }
+    .hero .photo-box { aspect-ratio:4/4.4; }
     .course-photo { display:none; }
     .course-grid { margin-top:4px; }
     .course-stats { margin-top:0; }
@@ -412,30 +416,30 @@
       <p class="lesson-sub">Программа собрана в три модуля — от техники речи до собственной программы в эфире. Всего 11 направлений и 50 академических часов.</p>
       <div class="module-grid">
         <div class="module-card">
-          <div class="module-top"><span class="module-tag"><span class="num">1</span>Модуль</span><span class="module-hrs">22 урока</span></div>
+          <div class="module-top"><span class="module-tag"><span class="num">1</span>Модуль</span><span class="module-hrs">20 уроков</span></div>
           <h3>Речь, голос и игра</h3>
           <ul class="module-list">
-            <li>Актёрское мастерство <span class="cnt">12</span></li>
+            <li>Актёрское мастерство <span class="cnt">10</span></li>
             <li>Ораторское мастерство. Владение голосом <span class="cnt">6</span></li>
             <li>Импровизация <span class="cnt">4</span></li>
           </ul>
         </div>
         <div class="module-card">
-          <div class="module-top"><span class="module-tag"><span class="num">2</span>Модуль</span><span class="module-hrs">10 уроков</span></div>
+          <div class="module-top"><span class="module-tag"><span class="num">2</span>Модуль</span><span class="module-hrs">14 уроков</span></div>
           <h3>Журналистика и новости</h3>
           <ul class="module-list">
-            <li>Основы журналистики <span class="cnt">4</span></li>
+            <li>Основы журналистики <span class="cnt">8</span></li>
             <li>Программа по составлению новостей <span class="cnt">4</span></li>
             <li>Подготовка и ведение интервью <span class="cnt">2</span></li>
           </ul>
         </div>
         <div class="module-card">
-          <div class="module-top"><span class="module-tag"><span class="num">3</span>Модуль</span><span class="module-hrs">18 уроков</span></div>
+          <div class="module-top"><span class="module-tag"><span class="num">3</span>Модуль</span><span class="module-hrs">16 уроков</span></div>
           <h3>Своя программа в эфире</h3>
           <ul class="module-list">
             <li>Практические занятия по составлению собственной программы <span class="cnt">6</span></li>
             <li>Навыки ведения шоу <span class="cnt">4</span></li>
-            <li>Ведение своего блога в социальных сетях <span class="cnt">4</span></li>
+            <li>Ведение своего блога в социальных сетях <span class="cnt">2</span></li>
             <li>Составление коротких авторских программ <span class="cnt">2</span></li>
             <li>Озвучка рекламных роликов <span class="cnt">2</span></li>
           </ul>
@@ -579,7 +583,7 @@
         <span class="mentor-more">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
       <div class="mentor-card" data-mentor="moskaleva">
-        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-moskaleva.jpg?v=2" alt="Юлия Москалёва" style="transform:translate(0px, 0px) scale(1.1);"></div>
+        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-moskaleva.jpg?v=3" alt="Юлия Москалёва" style="transform:translate(-12px, 1px) scale(1.1);"></div>
         <h3>Юлия Москалёва</h3>
         <p>Радиожурналистика</p>
         <span class="mentor-more">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -597,13 +601,13 @@
         <span class="mentor-more">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
       <div class="mentor-card" data-mentor="bocharova">
-        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-volkova.jpg?v=2" alt="Ольга Бочарова" style="transform:translate(0px, 0px) scale(1.1);"></div>
+        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-volkova.jpg?v=4" alt="Ольга Бочарова" style="transform:translate(0px, 40px) scale(1.6);"></div>
         <h3>Ольга Бочарова</h3>
         <p>Импровизация, интервью</p>
         <span class="mentor-more">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
       <div class="mentor-card" data-mentor="gladkovskaya">
-        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-gladkovskaya.jpg?v=2" alt="Ольга Гладковская" style="transform:translate(0px, 0px) scale(1.1);"></div>
+        <div class="mentor-photo"><img  loading="lazy" decoding="async"src="mentor-gladkovskaya.jpg?v=4" alt="Ольга Гладковская" style="transform:translate(0px, 55px) scale(1.5);"></div>
         <h3>Ольга Гладковская</h3>
         <p>Ведение собственного шоу и авторских программ</p>
         <span class="mentor-more">Подробнее <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -746,7 +750,7 @@
     },
     moskaleva: {
       name: 'Юлия Москалёва', role: 'Радиожурналистика',
-      photo: 'mentor-moskaleva.jpg?v=2', pos: 'center 10%', tf: 'translate(0px, 0px) scale(1)',
+      photo: 'mentor-moskaleva.jpg?v=3', pos: 'center 15%', tf: 'translate(0px, 0px) scale(1)',
       bio: 'Юлия — практикующий радиожурналист и детский психолог. Она показывает детям профессию изнутри: как рождается материал от идеи и поиска героя до готового сюжета в эфире. Учит находить интересное там, где другие проходят мимо. А её психологическое образование помогает находить подход к каждому ребёнку, слышать и понимать его, поддерживать и мягко направлять в процессе обучения.',
       learn: 'Собирать и подавать информацию как настоящий журналист.'
     },
@@ -764,13 +768,13 @@
     },
     bocharova: {
       name: 'Ольга Бочарова', role: 'Импровизация, интервью',
-      photo: 'mentor-volkova.jpg?v=2', pos: 'center 10%', tf: 'translate(0px, 0px) scale(1)',
+      photo: 'mentor-volkova.jpg?v=4', pos: 'center 15%', tf: 'translate(2px, -38px) scale(1)',
       bio: 'Ольга учит главному навыку ведущего — не теряться в прямом эфире. На её занятиях дети осваивают импровизацию, учатся задавать вопросы и вести интервью так, чтобы собеседник раскрылся, а разговор было интересно слушать. Ольга — ведущая линейного эфира радио «МСМ», профессиональная вокалистка и участница народного кастинга вокального шоу «Ну-ка, все вместе!» на телеканале «Россия 1». Она знает, что такое сцена, зрители и волнение перед выступлением, — и учит детей не бояться этого, а использовать энергию зала себе на пользу.',
       learn: 'Импровизировать и брать интервью у любого гостя.'
     },
     gladkovskaya: {
       name: 'Ольга Гладковская', role: 'Ведение шоу и авторских программ',
-      photo: 'mentor-gladkovskaya.jpg?v=2', pos: 'center 10%', tf: 'translate(0px, 0px) scale(1)',
+      photo: 'mentor-gladkovskaya.jpg?v=4', pos: 'center 15%', tf: 'translate(0px, 0px) scale(1)',
       bio: 'Ольга помогает ребёнку придумать и запустить собственное шоу — от концепции до эфира. Учит держать формат, работать с гостями и превращать идею в настоящую авторскую программу. Ольга — ведущая прямых эфиров на радио «МСМ», автор и ведущая проекта «Экскурсии на радио». Она умеет работать с любым напарником в эфире и передаёт этот навык детям: быть гибким, слышать собеседника и выстраивать диалог так, чтобы эфир звучал легко и естественно. Результат — не просто теория, а готовое авторское шоу, которое ребёнок создаёт сам.',
       learn: 'Придумать и вести собственное шоу от и до.'
     },
