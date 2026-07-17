@@ -21,7 +21,7 @@
   h1,h2,h3 { font-family:'Baloo 2',sans-serif; }
   img { max-width:100%; display:block; }
   a { color:inherit; }
-  section { padding:90px 0; }
+  section { padding:90px 0; scroll-margin-top:var(--header-h, 111px); }
   section + section { position:relative; }
   section + section::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:calc(100% - 64px); max-width:1096px; height:1px; background:var(--border); }
   #summer::before, #signup::before, #summer + section::before, #signup + section::before { content:none; }
