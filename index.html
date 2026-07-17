@@ -17,14 +17,14 @@
   html { scroll-behavior:smooth; }
   body { font-family:'Manrope',sans-serif; color:var(--ink); line-height:1.6; background-color:var(--bg); }
   #course, #schedule, #mentors, #contacts { background-color:var(--bg-alt); }
-  #summer, #signup { background-color:var(--red); }
+  #results, #signup { background-color:var(--red); }
   h1,h2,h3 { font-family:'Baloo 2',sans-serif; }
   img { max-width:100%; display:block; }
   a { color:inherit; }
   section { padding:90px 0; scroll-margin-top:var(--header-h, 111px); }
   section + section { position:relative; }
   section + section::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:calc(100% - 64px); max-width:1096px; height:1px; background:var(--border); }
-  #summer::before, #signup::before, #summer + section::before, #signup + section::before { content:none; }
+  #results::before, #signup::before, #results + section::before, #signup + section::before { content:none; }
   .adv-card, .price-card, .module-card { box-shadow:0 6px 22px rgba(35,30,28,.05); }
   .wrap { max-width:1160px; margin:0 auto; padding:0 32px; }
   .eyebrow { display:inline-block; color:var(--red); font-weight:700; font-size:13px; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; }
@@ -46,7 +46,7 @@
   .brand { display:flex; align-items:center; gap:16px; }
   .brand-divider { width:1px; height:44px; background:var(--border); flex-shrink:0; }
   .mcm-logo { flex-shrink:0; object-fit:contain; }
-  .nav-links { display:flex; gap:30px; list-style:none; margin:0 48px; }
+  .nav-links { display:flex; gap:24px; list-style:none; margin:0 28px; }
   .nav-links a { text-decoration:none; color:var(--ink); font-weight:700; font-size:14px; white-space:nowrap; }
   .nav-links a:hover { color:var(--red); }
   .nav-cta { display:flex; align-items:center; gap:20px; }
@@ -129,21 +129,21 @@
   .lesson-cta { text-align:center; margin-top:38px; }
 
   /* ---------- ЛЕТНИЙ ИНТЕНСИВ ---------- */
-  #summer { background-color:var(--red); color:#fff; position:relative; overflow:hidden; }
+  #results { background-color:var(--red); color:#fff; position:relative; overflow:hidden; }
   #signup { position:relative; overflow:hidden; }
   .block-ic { position:absolute; pointer-events:none; user-select:none; opacity:.13; z-index:0; }
   .block-ic img { width:100%; height:100%; object-fit:contain; display:block; }
-  #summer .wrap, #signup .wrap { position:relative; z-index:1; }
+  #results .wrap, #signup .wrap { position:relative; z-index:1; }
   .summer-grid { display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px; align-items:center; }
-  #summer .eyebrow { color:#fff; opacity:.85; }
-  #summer h2 { color:#fff; }
-  #summer p.section-sub { color:rgba(255,255,255,.85); }
+  #results .eyebrow { color:#fff; opacity:.85; }
+  #results h2 { color:#fff; }
+  #results p.section-sub { color:rgba(255,255,255,.85); }
   .summer-photo { border-radius:var(--radius-lg); aspect-ratio:4/3.3; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; overflow:hidden; }
   .summer-photo img { width:100%; height:100%; object-fit:cover; display:block; }
   .summer-photo .photo-note { color:rgba(255,255,255,.7); }
   .summer-schedule { background:rgba(255,255,255,.12); border-radius:var(--radius-md); padding:22px 26px; margin:26px 0 30px; font-size:16px; line-height:1.6; }
-  #summer .btn-primary { background:#fff; color:var(--red); box-shadow:none; }
-  #summer .btn-primary:hover { background:#FFEAE3; }
+  #results .btn-primary { background:#fff; color:var(--red); box-shadow:none; }
+  #results .btn-primary:hover { background:#FFEAE3; }
   .results-list { list-style:none; margin:10px 0 22px; display:grid; gap:11px; }
   .results-list li { position:relative; padding-left:28px; font-size:16px; line-height:1.55; color:rgba(255,255,255,.94); }
   .results-list li::before { content:''; position:absolute; left:4px; top:9px; width:9px; height:9px; border-radius:50%; background:#fff; }
@@ -292,6 +292,11 @@
   .footer-legal { font-size:13px; color:var(--muted-2); letter-spacing:.02em; }
 
   /* ---------- RESPONSIVE ---------- */
+  /* меню сворачивается в бургер раньше — 6 вкладок не помещаются */
+  @media (max-width: 1000px) {
+    .nav-links, .nav-phone { display:none; }
+    .burger { display:flex; }
+  }
   @media (max-width: 900px) {
     section { padding:60px 0; }
     .site-header { background:#fff; }
@@ -342,6 +347,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#course">О курсе</a></li>
+      <li><a href="#results">Результаты</a></li>
       <li><a href="#schedule">Расписание</a></li>
       <li><a href="#price">Стоимость</a></li>
       <li><a href="#mentors">Наставники</a></li>
@@ -355,6 +361,7 @@
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#course">О курсе</a>
+    <a href="#results">Результаты</a>
     <a href="#schedule">Расписание</a>
     <a href="#price">Стоимость</a>
     <a href="#mentors">Наши наставники</a>
@@ -450,7 +457,7 @@
   </div>
 </section>
 
-<section id="summer">
+<section id="results">
   <div class="block-ic" style="width:440px; height:440px; top:-90px; right:-80px;"><img src="icons/ic2-white.png" alt=""></div>
   <div class="block-ic" style="width:420px; height:420px; bottom:-110px; left:-90px;"><img src="icons/ic4-white.png" alt=""></div>
   <div class="wrap">
