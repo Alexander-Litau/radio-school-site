@@ -304,8 +304,8 @@
     .burger { display:flex; }
     .mentors-grid { grid-template-columns:repeat(2,1fr); }
     .modal-card { grid-template-columns:1fr; }
-    .modal-photo { min-height:0; height:440px; background:#fff; }
-    .modal-photo img { min-height:0; max-height:none; height:100%; }
+    .modal-photo { min-height:0; height:auto; background:#fff; }
+    .modal-photo img { width:100%; height:auto; min-height:0; max-height:none; object-fit:contain; transform:none !important; }
   }
   @media (max-width: 480px) {
     .nav-cta-btn { display:none; }
